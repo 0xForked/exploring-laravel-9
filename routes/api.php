@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/users', function () {
+   $users = [];
+
+   for ($i = 0; $i < 100000; $i++) {
+       $faker = Faker\Factory::create();
+       $users[] = [
+           'id' => $faker->uuid(),
+           'name' => $faker->name(),
+           'email' => $faker->email(),
+       ];
+   }
+
+   return response()->json($users);
+});

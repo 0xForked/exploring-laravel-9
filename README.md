@@ -64,3 +64,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Error with incompatible roadrunner version ??
+
+just add .rr.yaml in root directory and add this following content:
+```yaml
+# RR configuration version
+version: "2.7"
+```
+refer: https://github.com/laravel/octane/issues/479
